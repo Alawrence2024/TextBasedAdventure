@@ -18,13 +18,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="536dp"
-        android:layout_height="789dp"
+        android:layout_width="1152dp"
+        android:layout_height="1545dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wp2855598" />
+        app:srcCompat="@drawable/home" />
 
     <TextView
         android:id="@+id/textView"
@@ -87,21 +88,43 @@
         app:layout_constraintGuide_begin="205dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnOpt3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Option 1"
+        android:layout_marginBottom="32dp"
+        android:text="Option 3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        tools:layout_editor_absoluteY="647dp" />
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnOpt4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Option 2"
+        android:layout_marginBottom="32dp"
+        android:text="Option 4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        tools:layout_editor_absoluteY="647dp" />
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <Button
+        android:id="@+id/btnOpt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Option 1"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpt3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/btnOpt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Option 2"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpt4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
