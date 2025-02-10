@@ -6,13 +6,23 @@ public class ClassBase {
     private final int minClassLevel = 1;
     private final int maxClassLevel = 20;
     private int strength;
+    private String strengthModifier;
     private int dexterity;
+    private String dexterityModifier;
     private int constitution;
+    private String constitutionModifier;
     private int intelligence;
+    private String intelligenceModifier;
     private int wisdom;
+    private String wisdomModifier;
+
     private int charisma;
+    private String charismaModifier;
+
     private String className;
     private int classLevel;
+    private int armorClass;
+    private String proficiencyBonus;
 
     public int getStrength() {
         return strength;
@@ -23,6 +33,57 @@ public class ClassBase {
         } else {
             Exception intOutOfRange = new Exception("The provided number is out of range.");
             throw intOutOfRange;
+        }
+    }
+
+    public String getStrengthModifier() {
+        return strengthModifier;
+    }
+
+    /**
+     * sets strengthMod to a value based on Strength
+     */
+    public void setStrengthModifier() {
+        int strengthScore = getStrength();
+        switch (strengthScore){
+            case 3:
+                strengthModifier = "-4";
+                break;
+            case 4:
+            case 5:
+                strengthModifier = "-3";
+                break;
+            case 6:
+            case 7:
+                strengthModifier = "-2";
+                break;
+            case 8:
+            case 9:
+                strengthModifier = "-1";
+                break;
+            case 10:
+            case 11:
+                strengthModifier = "+0";
+                break;
+            case 12:
+            case 13:
+                strengthModifier = "+1";
+                break;
+            case 14:
+            case 15:
+                strengthModifier = "+2";
+                break;
+            case 16:
+            case 17:
+                strengthModifier = "+3";
+                break;
+            case 18:
+            case 19:
+                strengthModifier = "+4";
+                break;
+            case 20:
+                strengthModifier = "+5";
+                break;
         }
     }
 
@@ -38,6 +99,56 @@ public class ClassBase {
         }
     }
 
+    public String getDexterityModifier() {
+        return dexterityModifier;
+    }
+    /**
+     * sets dexterityMod to a value based on Dexterity
+     */
+    public void setDexterityModifier() {
+        int dexterityScore = getDexterity();
+        switch (dexterityScore){
+            case 3:
+                dexterityModifier = "-4";
+                break;
+            case 4:
+            case 5:
+                dexterityModifier = "-3";
+                break;
+            case 6:
+            case 7:
+                dexterityModifier = "-2";
+                break;
+            case 8:
+            case 9:
+                dexterityModifier = "-1";
+                break;
+            case 10:
+            case 11:
+                dexterityModifier = "+0";
+                break;
+            case 12:
+            case 13:
+                dexterityModifier = "+1";
+                break;
+            case 14:
+            case 15:
+                dexterityModifier = "+2";
+                break;
+            case 16:
+            case 17:
+                dexterityModifier = "+3";
+                break;
+            case 18:
+            case 19:
+                dexterityModifier = "+4";
+                break;
+            case 20:
+                dexterityModifier = "+5";
+                break;
+        }
+    }
+
     public int getConstitution() {
         return constitution;
     }
@@ -47,6 +158,56 @@ public class ClassBase {
         } else {
             Exception intOutOfRange = new Exception("The provided number is out of range.");
             throw intOutOfRange;
+        }
+    }
+
+    public String getConstitutionModifier() {
+        return constitutionModifier;
+    }
+    /**
+     * sets constitutionMod to a value based on Constitution
+     */
+    public void setConstitutionModifier() {
+        int constitutionScore = getConstitution();
+        switch (constitutionScore){
+            case 3:
+                constitutionModifier = "-4";
+                break;
+            case 4:
+            case 5:
+                constitutionModifier = "-3";
+                break;
+            case 6:
+            case 7:
+                constitutionModifier = "-2";
+                break;
+            case 8:
+            case 9:
+                constitutionModifier = "-1";
+                break;
+            case 10:
+            case 11:
+                constitutionModifier = "+0";
+                break;
+            case 12:
+            case 13:
+                constitutionModifier = "+1";
+                break;
+            case 14:
+            case 15:
+                constitutionModifier = "+2";
+                break;
+            case 16:
+            case 17:
+                constitutionModifier = "+3";
+                break;
+            case 18:
+            case 19:
+                constitutionModifier = "+4";
+                break;
+            case 20:
+                constitutionModifier = "+5";
+                break;
         }
     }
 
@@ -62,6 +223,56 @@ public class ClassBase {
         }
     }
 
+    public String getIntelligenceModifier() {
+        return intelligenceModifier;
+    }
+    /**
+     * sets intelligenceMod to a value based on Intelligence
+     */
+    public void setIntelligenceModifier() {
+        int intelligenceScore = getIntelligence();
+        switch (intelligenceScore){
+            case 3:
+                intelligenceModifier = "-4";
+                break;
+            case 4:
+            case 5:
+                intelligenceModifier = "-3";
+                break;
+            case 6:
+            case 7:
+                intelligenceModifier = "-2";
+                break;
+            case 8:
+            case 9:
+                intelligenceModifier = "-1";
+                break;
+            case 10:
+            case 11:
+                intelligenceModifier = "+0";
+                break;
+            case 12:
+            case 13:
+                intelligenceModifier = "+1";
+                break;
+            case 14:
+            case 15:
+                intelligenceModifier = "+2";
+                break;
+            case 16:
+            case 17:
+                intelligenceModifier = "+3";
+                break;
+            case 18:
+            case 19:
+                intelligenceModifier = "+4";
+                break;
+            case 20:
+                intelligenceModifier = "+5";
+                break;
+        }
+    }
+
     public int getWisdom() {
         return wisdom;
     }
@@ -74,6 +285,56 @@ public class ClassBase {
         }
     }
 
+    public String getWisdomModifier() {
+        return wisdomModifier;
+    }
+    /**
+     * sets wisdomMod to a value based on Wisdom
+     */
+    public void setWisdomModifier() {
+        int wisdomScore = getWisdom();
+        switch (wisdomScore){
+            case 3:
+                wisdomModifier = "-4";
+                break;
+            case 4:
+            case 5:
+                wisdomModifier = "-3";
+                break;
+            case 6:
+            case 7:
+                wisdomModifier = "-2";
+                break;
+            case 8:
+            case 9:
+                wisdomModifier = "-1";
+                break;
+            case 10:
+            case 11:
+                wisdomModifier = "+0";
+                break;
+            case 12:
+            case 13:
+                wisdomModifier = "+1";
+                break;
+            case 14:
+            case 15:
+                wisdomModifier = "+2";
+                break;
+            case 16:
+            case 17:
+                wisdomModifier = "+3";
+                break;
+            case 18:
+            case 19:
+                wisdomModifier = "+4";
+                break;
+            case 20:
+                wisdomModifier = "+5";
+                break;
+        }
+    }
+
     public int getCharisma() {
         return charisma;
     }
@@ -83,6 +344,56 @@ public class ClassBase {
         } else {
             Exception intOutOfRange = new Exception("The provided number is out of range.");
             throw intOutOfRange;
+        }
+    }
+
+    public String getCharismaModifier() {
+        return charismaModifier;
+    }
+    /**
+     * sets charismaMod to a value based on Charisma
+     */
+    public void setCharismaModifier() {
+        int charismaScore = getCharisma();
+        switch (charismaScore){
+            case 3:
+                charismaModifier = "-4";
+                break;
+            case 4:
+            case 5:
+                charismaModifier = "-3";
+                break;
+            case 6:
+            case 7:
+                charismaModifier = "-2";
+                break;
+            case 8:
+            case 9:
+                charismaModifier = "-1";
+                break;
+            case 10:
+            case 11:
+                charismaModifier = "+0";
+                break;
+            case 12:
+            case 13:
+                charismaModifier = "+1";
+                break;
+            case 14:
+            case 15:
+                charismaModifier = "+2";
+                break;
+            case 16:
+            case 17:
+                charismaModifier = "+3";
+                break;
+            case 18:
+            case 19:
+                charismaModifier = "+4";
+                break;
+            case 20:
+                charismaModifier = "+5";
+                break;
         }
     }
 
@@ -102,6 +413,56 @@ public class ClassBase {
         } else {
             Exception intOutOfRange = new Exception("The provided number is out of range.");
             throw intOutOfRange;
+        }
+    }
+
+    public int getArmorClass() {
+        return armorClass;
+    }
+    public void setArmorClass(int armorClass) {
+        this.armorClass = armorClass;
+    }
+
+    public String getProficiencyBonus() {
+        return proficiencyBonus;
+    }
+
+    /**
+     * sets proficencyBonus to a number based on the class level.
+     */
+    public void setProficiencyBonus() {
+        int lvl = getClassLevel();
+        switch (lvl){
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                proficiencyBonus = "+2";
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                proficiencyBonus = "+3";
+                break;
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+                proficiencyBonus = "+4";
+                break;
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+                proficiencyBonus = "+5";
+                break;
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+                proficiencyBonus = "+6";
+                break;
         }
     }
 
