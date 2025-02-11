@@ -1,4 +1,4 @@
-package com.example.textbasedadventure.Classes;
+package com.example.textbasedadventure.Classes.DndClasses;
 
 public class Rogue extends ClassBase {
     private String sneakAttackBonusDamage;
