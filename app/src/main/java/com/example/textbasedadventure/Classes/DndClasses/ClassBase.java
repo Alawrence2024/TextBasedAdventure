@@ -1,4 +1,4 @@
-package com.example.textbasedadventure.Classes;
+package com.example.textbasedadventure.Classes.DndClasses;
 
 public abstract class ClassBase {
     private final int minStatScore = 3;
