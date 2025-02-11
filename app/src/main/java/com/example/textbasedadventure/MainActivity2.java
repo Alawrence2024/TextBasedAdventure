@@ -19,6 +19,22 @@ public class MainActivity2 extends AppCompatActivity {
         btnOpt3 = findViewById(R.id.btnOpt3);
         btnOpt4 = findViewById(R.id.btnOpt4);
 
+        btnOpt1.setOnClickListener(v -> {
+            // Handle button click
+        });
+
+        btnOpt2.setOnClickListener(v -> {
+            // Handle button click
+        });
+
+        btnOpt3.setOnClickListener(v -> {
+            // Handle button click
+        });
+
+        btnOpt4.setOnClickListener(v -> {
+            // Handle button click
+        });
+
 
     }
 }
