@@ -9,7 +9,7 @@ import com.example.textbasedadventure.Classes.UI;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    private UI ui;
+    public UI ui;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
