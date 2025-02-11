@@ -1,6 +1,6 @@
 package com.example.textbasedadventure.Classes;
 
-public class ClassBase {
+public abstract class ClassBase {
     private final int minStatScore = 3;
     private final int maxStatScore = 20;
     private final int minClassLevel = 1;
@@ -15,14 +15,16 @@ public class ClassBase {
     private String intelligenceModifier;
     private int wisdom;
     private String wisdomModifier;
-
     private int charisma;
     private String charismaModifier;
-
     private String className;
     private int classLevel;
     private int armorClass;
     private String proficiencyBonus;
+    private int hitPoints;
+    protected String hitDiceSides;
+    private int hitDiceNumber;
+
 
     public int getStrength() {
         return strength;
@@ -464,6 +466,47 @@ public class ClassBase {
                 proficiencyBonus = "+6";
                 break;
         }
+    }
+
+    public int getHitPoints() {
+        return hitPoints;
+    }
+    public void setHitPoints(){
+        String diceSides = getHitDiceSides();
+        int sides = 0;
+        switch (diceSides){
+            case "d4":
+                sides = 4;
+                break;
+            case "d6":
+                sides = 6;
+                break;
+            case "d8":
+                sides = 8;
+                break;
+            case "d10":
+                sides = 10;
+                break;
+            case "d12":
+                sides = 12;
+                break;
+            case "d20":
+                sides = 20;
+                break;
+        }
+        hitPoints = sides * getHitDiceNumber();
+    }
+
+    public String getHitDiceSides() {
+        return hitDiceSides;
+    }
+    abstract void setHitdiceSides();
+
+    public int getHitDiceNumber() {
+        return hitDiceNumber;
+    }
+    public void setHitDiceNumber(){
+        hitDiceNumber = getClassLevel();
     }
 
     public int getMinStatScore() {

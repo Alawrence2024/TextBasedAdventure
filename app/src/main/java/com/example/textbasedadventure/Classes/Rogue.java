@@ -3,6 +3,29 @@ package com.example.textbasedadventure.Classes;
 public class Rogue extends ClassBase {
     private String sneakAttackBonusDamage;
 
+    public Rogue(int strength, int dexterity, int constitution, int wisdom, int intelligence, int charisma, int classLevel, int armorClass) throws Exception {
+        setClassName("Rogue");
+        setClassLevel(classLevel);
+        setStrength(strength);
+        setStrengthModifier();
+        setDexterity(dexterity);
+        setDexterityModifier();
+        setConstitution(constitution);
+        setConstitutionModifier();
+        setWisdom(wisdom);
+        setWisdomModifier();
+        setIntelligence(intelligence);
+        setIntelligenceModifier();
+        setCharisma(charisma);
+        setCharismaModifier();
+        setArmorClass(armorClass);
+        setSneakAttackBonusDamage();
+        setProficiencyBonus();
+        setHitdiceSides();
+        setHitDiceNumber();
+        setHitPoints();
+    }
+
     public String getSneakAttackBonusDamage() {
         return sneakAttackBonusDamage;
     }
@@ -54,5 +77,23 @@ public class Rogue extends ClassBase {
                 sneakAttackBonusDamage = "10d6";
                 break;
         }
+    }
+
+    @Override
+    void setHitdiceSides() {
+        hitDiceSides = "d8";
+    }
+
+    /**
+     * Takes in the attack damage, halves it if the class level is greater than or equal to 5, and returns it.
+     * @param attackDamage the amount of damage done to the player
+     * @return the actual damage, normal if below level 5 and halved if level 5 or higher.
+     */
+    public int uncannyDodge (int attackDamage){
+        int actualDamage = attackDamage;
+        if(getClassLevel() >= 5){
+            actualDamage = attackDamage/2;
+        }
+        return actualDamage;
     }
 }
