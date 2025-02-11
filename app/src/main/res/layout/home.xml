@@ -13,7 +13,6 @@
         android:layout_height="1491dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home" />
@@ -22,12 +21,13 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="124dp"
         android:text="LifeLine 2.0"
         android:textColor="#FDFDFD"
         android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -37,6 +37,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
         android:background="#E9E9E9"
+        android:backgroundTint="#FFFFFF"
         android:onClick="onStart"
         android:text="Start"
         app:layout_constraintBottom_toTopOf="@+id/btnInfo"
