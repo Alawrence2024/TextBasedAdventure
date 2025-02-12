@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateView(){
-        info = findViewById(R.id.TVDialog);
-        maintext = findViewById(R.id.TVInfo);
+        maintext = findViewById(R.id.TVDialog);
+        info = findViewById(R.id.TVInfo);
         maintext.setText(currentOption.optionText);
         info.setText(currentOption.optionTitle);
 
