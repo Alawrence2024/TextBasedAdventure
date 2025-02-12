@@ -25,7 +25,7 @@ public class MainActivity2 extends AppCompatActivity {
         tvInfo2 = findViewById(R.id.tvInfo2);
         tvInfo3 = findViewById(R.id.tvInfo3);
 
-        tvInfo1.setText("Hello Welcome");
+        tvInfo1.setText("Hello Welcome to Kerfta");
 
         btnOpt1.setOnClickListener(v -> {
             // Handle button click
