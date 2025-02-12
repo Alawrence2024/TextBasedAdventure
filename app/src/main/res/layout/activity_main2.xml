@@ -5,6 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A95C5C"
+    android:backgroundTint="#1A1919"
     tools:context=".MainActivity2">
 
 
@@ -86,8 +88,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="#0F0D0D"
         android:onClick="onClickOpt3"
         android:text="Option 3"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
@@ -97,8 +101,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="#0F0D0D"
         android:onClick="onClickOpt4"
         android:text="Option 4"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline3" />
@@ -108,8 +114,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="#0F0D0D"
         android:onClick="onClickOpt1"
         android:text="Option 1"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btnOpt3"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
@@ -119,8 +127,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="#0F0D0D"
         android:onClick="onInfo"
         android:text="Option 2"
+        android:textSize="20sp"
+        app:iconPadding="8dp"
+        app:iconSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/btnOpt4"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline3" />
