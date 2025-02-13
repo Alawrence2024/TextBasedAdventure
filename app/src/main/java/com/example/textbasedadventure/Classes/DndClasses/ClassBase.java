@@ -24,6 +24,7 @@ public abstract class ClassBase {
     private int hitPoints;
     protected String hitDiceSides;
     private int hitDiceNumber;
+    private int maxHitPoints;
 
 
     public int getStrength() {
@@ -471,6 +472,9 @@ public abstract class ClassBase {
     public int getHitPoints() {
         return hitPoints;
     }
+    public int getMaxHitPoints() {
+        return maxHitPoints;
+    }
     public void setHitPoints(){
         String diceSides = getHitDiceSides();
         int sides = 0;
@@ -495,6 +499,17 @@ public abstract class ClassBase {
                 break;
         }
         hitPoints = sides * getHitDiceNumber();
+        maxHitPoints = hitPoints;
+    }
+
+    /**
+     * used to update ohw many hitpoints the player has after the initial total has been set.
+     * @param oldHitPoints the amount of hitpoints the character currently has
+     * @param hitPointChange the amount to be added or subtracted from the current hit points
+     *                       if hitPointChange is being subtracted, make it negative.
+     */
+    public void updateHitPoints(int oldHitPoints, int hitPointChange){
+        hitPoints = oldHitPoints + hitPointChange;
     }
 
     public String getHitDiceSides() {
