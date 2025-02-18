@@ -4,7 +4,13 @@ import java.util.ArrayList;
 
 public class StoryOption {
 
-    public ArrayList<StoryOption> nextOptions;
+    public StoryOption(String optionTitle, String optionText) {
+        this.optionTitle = optionTitle;
+        this.optionText = optionText;
+    }
+    public StoryOption() {}
+
+    public ArrayList<StoryOption> nextOptions = new ArrayList<>();
     public String optionTitle;
     public String optionText;
 }
