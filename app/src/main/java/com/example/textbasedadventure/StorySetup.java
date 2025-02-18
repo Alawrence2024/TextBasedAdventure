@@ -1,6 +1,7 @@
 package com.example.textbasedadventure;
 
 import com.example.textbasedadventure.Classes.*;
+import com.example.textbasedadventure.Classes.DndClasses.*;
 
 
 import java.util.Random;
@@ -43,21 +44,21 @@ public class StorySetup {
         option5.nextOptions.add(option6);
     }
 
-    public void setRandomClass(){
+    public void setRandomClass() throws Exception {
        Random random = new Random();
        int randomClass = random.nextInt(4);
        switch (randomClass){
            case 0:
-               playerClass = new Druid();
+               playerClass = new Druid(1,1,1,1,1,1,1,1);
                break;
            case 1:
-               playerClass = new Fighter();
+               playerClass = new Fighter(1,1,1,1,1,1,1,1);
                break;
            case 2:
-               playerClass = new Rogue();
+               playerClass = new Rogue(1,1,1,1,1,1,1,1);
                break;
            case 3:
-               playerClass = new Sorcerer();
+               playerClass = new Sorcerer(1,1,1,1,1,1,1,1);
                break;
        }
     }
