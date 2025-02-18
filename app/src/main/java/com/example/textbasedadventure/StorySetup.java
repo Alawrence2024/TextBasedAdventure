@@ -1,9 +1,13 @@
 package com.example.textbasedadventure;
 
-import com.example.textbasedadventure.Classes.StoryOption;
+import com.example.textbasedadventure.Classes.*;
+
+
+import java.util.Random;
 
 public class StorySetup {
     public static StoryOption startNode = new StoryOption();
+    public static ClassBase playerClass;
     public StorySetup(){
         startNode.optionTitle = "Journey's start";
         startNode.optionText = "this is the start of the story";
@@ -37,5 +41,24 @@ public class StorySetup {
         StoryOption option6 = new StoryOption("click me", "This is the end of this demo");
 
         option5.nextOptions.add(option6);
+    }
+
+    public void setRandomClass(){
+       Random random = new Random();
+       int randomClass = random.nextInt(4);
+       switch (randomClass){
+           case 0:
+               playerClass = new Druid();
+               break;
+           case 1:
+               playerClass = new Fighter();
+               break;
+           case 2:
+               playerClass = new Rogue();
+               break;
+           case 3:
+               playerClass = new Sorcerer();
+               break;
+       }
     }
 }
