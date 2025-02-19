@@ -26,9 +26,9 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         btnOpt1 = findViewById(R.id.btnOpt1);
-        btnOpt2 = findViewById(R.id.btnOpt2);
-        btnOpt3 = findViewById(R.id.btnOpt3);
-        btnOpt4 = findViewById(R.id.btnOpt4);
+        btnOpt2 = findViewById(R.id.btnSelect);
+        btnOpt3 = findViewById(R.id.btnRogue);
+        btnOpt4 = findViewById(R.id.btnSorcerer);
 
         tvInfo1 = findViewById(R.id.tvInfo1);
         tvInfo2 = findViewById(R.id.tvInfo2);
@@ -78,9 +78,9 @@ public class MainActivity2 extends AppCompatActivity {
         info.setText(currentOption.optionTitle);
 
         opt1 = findViewById(R.id.btnOpt1);
-        opt2 = findViewById(R.id.btnOpt2);
-        opt3 = findViewById(R.id.btnOpt3);
-        opt4 = findViewById(R.id.btnOpt4);
+        opt2 = findViewById(R.id.btnSelect);
+        opt3 = findViewById(R.id.btnRogue);
+        opt4 = findViewById(R.id.btnSorcerer);
 
         opt1.setVisibility(View.VISIBLE);
         opt2.setVisibility(View.VISIBLE);

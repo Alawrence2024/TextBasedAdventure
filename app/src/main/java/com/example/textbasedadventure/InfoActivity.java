@@ -22,11 +22,15 @@ public class InfoActivity extends AppCompatActivity {
 
         btnHome = findViewById(R.id.btnHome);
 
+        tvInfo.setText("GAME INFO HERE");
+
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(InfoActivity.this, MainActivity.class);
                 startActivity(intent);
+
+
             }
         });
 
