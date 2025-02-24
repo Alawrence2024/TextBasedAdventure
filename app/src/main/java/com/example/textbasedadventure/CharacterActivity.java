@@ -19,6 +19,9 @@ public class CharacterActivity extends AppCompatActivity {
     Button btnDruid, btnFighter, btnRogue, btnSorcerer, btnSelect;
     TextView tvCharDescription;
 
+    String selectedCharacter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,8 @@ public class CharacterActivity extends AppCompatActivity {
                 imageSorcerer.setVisibility(INVISIBLE);
 
                 tvCharDescription.setText("Druid character information");
+
+                selectedCharacter = "Druid";
             }
         });
 
@@ -65,6 +70,8 @@ public class CharacterActivity extends AppCompatActivity {
                 imageSorcerer.setVisibility(INVISIBLE);
 
                 tvCharDescription.setText("Fighter character information");
+
+                selectedCharacter = "Fighter";
             }
         });
 
@@ -77,6 +84,8 @@ public class CharacterActivity extends AppCompatActivity {
                 imageSorcerer.setVisibility(INVISIBLE);
 
                 tvCharDescription.setText("Rogue character information");
+
+                selectedCharacter = "Rogue";
             }
         });
 
@@ -89,6 +98,8 @@ public class CharacterActivity extends AppCompatActivity {
                 imageSorcerer.setVisibility(VISIBLE);
 
                 tvCharDescription.setText("Sorcerer character information");
+
+                selectedCharacter = "Sorcerer";
             }
         });
 
@@ -96,6 +107,7 @@ public class CharacterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CharacterActivity.this, MainActivity2.class);
+                intent.putExtra("selectedCharacter", selectedCharacter);
                 startActivity(intent);
 
 

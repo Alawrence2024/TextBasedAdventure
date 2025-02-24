@@ -1,5 +1,6 @@
 package com.example.textbasedadventure;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,10 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        Bundle bundle = getIntent().getExtras();
+        String selectedCharacter = bundle.getString("selectedCharacter");
+
+
 
         btnOpt1 = findViewById(R.id.btnOpt1);
         btnOpt2 = findViewById(R.id.btnSelect);
@@ -34,7 +39,7 @@ public class MainActivity2 extends AppCompatActivity {
         tvInfo2 = findViewById(R.id.tvInfo2);
         tvInfo3 = findViewById(R.id.tvInfo3);
 
-        tvInfo1.setText("Hello Welcome to Kerfta");
+        tvInfo1.setText("Hello Welcome to Kerfta \n Character Selected: " + selectedCharacter);
 
 
         currentOption = StorySetup.startNode;
@@ -124,7 +129,15 @@ public class MainActivity2 extends AppCompatActivity {
                 opt1.setVisibility(View.INVISIBLE);
                 opt2.setVisibility(View.INVISIBLE);
                 opt3.setVisibility(View.INVISIBLE);
-                opt4.setVisibility(View.INVISIBLE);
+                opt4.setVisibility(View.VISIBLE);
+                opt4.setText("Home");
+                opt4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
                 break;
         }
 
