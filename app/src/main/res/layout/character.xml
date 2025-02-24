@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A95C5C"
+    android:backgroundTint="#1A1919"
+    tools:context=".CharacterActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="1407dp"
+        android:layout_height="1820dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <TextView
+        android:id="@+id/tvInfo1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#F6FAFAFA"
+        android:backgroundTint="#A5FAFAFA"
+        android:text="Choose Your Character"
+        android:textAlignment="center"
+        android:textColor="#070707"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="378dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
+
+    <Button
+        android:id="@+id/btnRogue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#0F0D0D"
+        android:text="Rogue"
+        android:textSize="20sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/btnSorcerer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#0F0D0D"
+        android:text="Sorcerer"
+        android:textSize="20sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <Button
+        android:id="@+id/btnSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="84dp"
+        android:backgroundTint="#0F0D0D"
+        android:text="Select"
+        android:textSize="20sp"
+        app:iconPadding="8dp"
+        app:iconSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSorcerer"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvCharDescription" />
+
+    <Button
+        android:id="@+id/btnDruid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#0F0D0D"
+        android:text="Druid"
+        android:textSize="20sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRogue"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/btnFighter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#0F0D0D"
+        android:text="Fighter"
+        android:textSize="20sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSorcerer"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/tvCharDescription"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:background="#AA000000"
+        android:text="Character description"
+        android:textColor="#F2E9E9"
+        app:layout_constraintBottom_toTopOf="@+id/btnSelect"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="370dp" />
+
+
+    <ImageView
+        android:id="@+id/imageDruid"
+        android:layout_width="296dp"
+        android:layout_height="278dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCharDescription"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfo1"
+        app:layout_constraintVertical_bias="0.352"
+        app:srcCompat="@drawable/druid" />
+
+    <ImageView
+        android:id="@+id/imageRogue"
+        android:layout_width="274dp"
+        android:layout_height="332dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCharDescription"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfo1"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/rogue" />
+
+    <ImageView
+        android:id="@+id/imageSorcerer"
+        android:layout_width="255dp"
+        android:layout_height="285dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCharDescription"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfo1"
+        app:layout_constraintVertical_bias="0.541"
+        app:srcCompat="@drawable/sorcerer" />
+
+    <ImageView
+        android:id="@+id/imageFighter"
+        android:layout_width="284dp"
+        android:layout_height="338dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCharDescription"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfo1"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/fighter2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
