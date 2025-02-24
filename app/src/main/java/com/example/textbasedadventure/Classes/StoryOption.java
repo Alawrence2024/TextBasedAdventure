@@ -13,4 +13,6 @@ public class StoryOption {
     public ArrayList<StoryOption> nextOptions = new ArrayList<>();
     public String optionTitle;
     public String optionText;
+
+    public int specialOptionNum;
 }
