@@ -36,6 +36,8 @@ public class CharacterActivity extends AppCompatActivity {
 
         tvCharDescription = findViewById(R.id.tvCharDescription);
 
+        tvCharDescription.setText("Select Your Character");
+
         // Initialize ImageViews here
         ImageView imageDruid = findViewById(R.id.imageDruid);
         ImageView imageFighter = findViewById(R.id.imageFighter);
@@ -55,7 +57,14 @@ public class CharacterActivity extends AppCompatActivity {
                 imageRogue.setVisibility(INVISIBLE);
                 imageSorcerer.setVisibility(INVISIBLE);
 
-                tvCharDescription.setText("Druid character information");
+                tvCharDescription.setText("Race: Half-Elf\n" +
+                        "Background: Hermit\n" +
+                        "Personality: Calm, spiritual, curious\n\n" +
+                        "Backstory:\n Raised by druids, the druid is in Kerfta to " +
+                        "stop the beast and restore balance to nature. " +
+                        "Communicates with the land and the animals.\n\n" +
+                        "Role:\n Healer, scout, and shape-shifter, " +
+                        "using nature magic to aid the team.");
 
                 selectedCharacter = "Druid";
             }
@@ -69,7 +78,13 @@ public class CharacterActivity extends AppCompatActivity {
                 imageRogue.setVisibility(INVISIBLE);
                 imageSorcerer.setVisibility(INVISIBLE);
 
-                tvCharDescription.setText("Fighter character information");
+                tvCharDescription.setText("Race: Human\n" +
+                        "Background: Soldier\n" +
+                        "Personality: Loyal, disciplined, determined\n\n" +
+                        "Backstory:\n Former soldier turned mercenary," +
+                        " The fighter is here to protect the town from the beast." +
+                        " He is driven by a sense of duty and honor.\n\n" +
+                        "Role:\n Frontline fighter and tactician, skilled in combat and strategy.");
 
                 selectedCharacter = "Fighter";
             }
@@ -83,7 +98,14 @@ public class CharacterActivity extends AppCompatActivity {
                 imageRogue.setVisibility(VISIBLE);
                 imageSorcerer.setVisibility(INVISIBLE);
 
-                tvCharDescription.setText("Rogue character information");
+                tvCharDescription.setText("Race: Tiefling\n" +
+                        "Background: Urchin\n" +
+                        "Personality: Quick-witted, sly, independent\n\n" +
+                        "Backstory:\n A street-smart Tiefling who " +
+                        "learned magic to get by. He’s here for the " +
+                        "mystery and treasure, and to defeat the beast.\n\n" +
+                        "Role:\n Sneak, infiltrator, and magical " +
+                        "trickster, skilled in stealth and magic.");
 
                 selectedCharacter = "Rogue";
             }
@@ -97,7 +119,12 @@ public class CharacterActivity extends AppCompatActivity {
                 imageRogue.setVisibility(INVISIBLE);
                 imageSorcerer.setVisibility(VISIBLE);
 
-                tvCharDescription.setText("Sorcerer character information");
+                tvCharDescription.setText("Race: Dragonborn\n" +
+                        "Background: Noble\n" +
+                        "Personality: Charismatic, proud, empathetic\n\n" +
+                        "Backstory: \nRaised in a noble family with magical blood," +
+                        " the sorcerer wants to prove himself by defeating the beast.\n\n" +
+                        "Role:\n Magic damage dealer, leader, and diplomat, using fire and arcane spells.");
 
                 selectedCharacter = "Sorcerer";
             }

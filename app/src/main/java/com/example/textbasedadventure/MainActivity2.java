@@ -21,12 +21,14 @@ public class MainActivity2 extends AppCompatActivity {
     StorySetup setup = new StorySetup();
     public StoryOption currentOption;
 
+    String selectedCharacter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Bundle bundle = getIntent().getExtras();
-        String selectedCharacter = bundle.getString("selectedCharacter");
+        selectedCharacter = bundle.getString("selectedCharacter");
 
 
 
@@ -39,7 +41,8 @@ public class MainActivity2 extends AppCompatActivity {
         tvInfo2 = findViewById(R.id.tvInfo2);
         tvInfo3 = findViewById(R.id.tvInfo3);
 
-        tvInfo1.setText("Hello Welcome to Kerfta \n Character Selected: " + selectedCharacter);
+        tvInfo1.setText("Welcome to Kerfta");
+        tvInfo2.setText("Character Selected: " + selectedCharacter);
 
 
         currentOption = StorySetup.startNode;
@@ -54,22 +57,27 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void option1(View view) {
         currentOption = currentOption.nextOptions.get(0);
+        tvInfo1.setText("Your Character: " + selectedCharacter);
         updateView();
+
     }
 
     public void option2(View view) {
         currentOption = currentOption.nextOptions.get(1);
+        tvInfo1.setText("Your Character: " + selectedCharacter);
         updateView();
     }
 
     public void option3(View view) {
         currentOption = currentOption.nextOptions.get(2);
+        tvInfo1.setText("Your Character: " + selectedCharacter);
         updateView();
 
     }
 
     public void option4(View view) {
         currentOption = currentOption.nextOptions.get(3);
+        tvInfo1.setText("Your Character: " + selectedCharacter);
         updateView();
     }
 
@@ -91,6 +99,8 @@ public class MainActivity2 extends AppCompatActivity {
         opt2.setVisibility(View.VISIBLE);
         opt3.setVisibility(View.VISIBLE);
         opt4.setVisibility(View.VISIBLE);
+
+
 
 
         switch (currentOption.nextOptions.size()){
