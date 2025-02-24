@@ -49,16 +49,16 @@ public class StorySetup {
        int randomClass = random.nextInt(4);
        switch (randomClass){
            case 0:
-               playerClass = new Druid(1,1,1,1,1,1,1,1);
+               playerClass = new Druid(3,3,3,3,3,3,3,3);
                break;
            case 1:
-               playerClass = new Fighter(1,1,1,1,1,1,1,1);
+               playerClass = new Fighter(3,3,3,3,3,3,3,3);
                break;
            case 2:
-               playerClass = new Rogue(1,1,1,1,1,1,1,1);
+               playerClass = new Rogue(3,3,3,3,3,3,3,3);
                break;
            case 3:
-               playerClass = new Sorcerer(1,1,1,1,1,1,1,1);
+               playerClass = new Sorcerer(3,3,3,3,3,3,3,3);
                break;
        }
     }

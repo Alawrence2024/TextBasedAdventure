@@ -130,4 +130,17 @@ public class MainActivity2 extends AppCompatActivity {
 
 
     }
+
+    public void specialOptionSetup(){
+        if(currentOption.specialOptionNum == 0) return;
+
+        switch (currentOption.specialOptionNum){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+    }
 }
