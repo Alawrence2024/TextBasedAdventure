@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.textbasedadventure.Classes.StoryOption;
@@ -27,15 +26,14 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
         Bundle bundle = getIntent().getExtras();
         selectedCharacter = bundle.getString("selectedCharacter");
 
-
-
         btnOpt1 = findViewById(R.id.btnOpt1);
-        btnOpt2 = findViewById(R.id.btnSelect);
-        btnOpt3 = findViewById(R.id.btnRogue);
-        btnOpt4 = findViewById(R.id.btnSorcerer);
+        btnOpt2 = findViewById(R.id.btnOpt2);
+        btnOpt3 = findViewById(R.id.btnOpt3);
+        btnOpt4 = findViewById(R.id.btnOpt4);
 
         tvInfo1 = findViewById(R.id.tvInfo1);
         tvInfo2 = findViewById(R.id.tvInfo2);
@@ -45,119 +43,136 @@ public class MainActivity2 extends AppCompatActivity {
         tvInfo2.setText("Character Selected: " + selectedCharacter);
 
 
+        setup.adjustStoryBasedOnCharacter(selectedCharacter);
+
         currentOption = StorySetup.startNode;
+
         updateView();
-
-
-
     }
-
-
-
 
     public void option1(View view) {
         currentOption = currentOption.nextOptions.get(0);
-        tvInfo1.setText("Your Character: " + selectedCharacter);
         updateView();
-
     }
 
     public void option2(View view) {
         currentOption = currentOption.nextOptions.get(1);
-        tvInfo1.setText("Your Character: " + selectedCharacter);
         updateView();
     }
 
     public void option3(View view) {
         currentOption = currentOption.nextOptions.get(2);
-        tvInfo1.setText("Your Character: " + selectedCharacter);
         updateView();
-
     }
 
     public void option4(View view) {
         currentOption = currentOption.nextOptions.get(3);
-        tvInfo1.setText("Your Character: " + selectedCharacter);
         updateView();
     }
 
-
-
-
-    public void updateView(){
+    public void updateView() {
         maintext = findViewById(R.id.tvInfo3);
         info = findViewById(R.id.tvInfo2);
-        maintext.setText(currentOption.optionText);
-        info.setText(currentOption.optionTitle);
+        maintext.setText("\n" + currentOption.optionText);
+        info.setText("Option: " + currentOption.optionTitle);
 
         opt1 = findViewById(R.id.btnOpt1);
-        opt2 = findViewById(R.id.btnSelect);
-        opt3 = findViewById(R.id.btnRogue);
-        opt4 = findViewById(R.id.btnSorcerer);
+        opt2 = findViewById(R.id.btnOpt2);
+        opt3 = findViewById(R.id.btnOpt3);
+        opt4 = findViewById(R.id.btnOpt4);
 
         opt1.setVisibility(View.VISIBLE);
         opt2.setVisibility(View.VISIBLE);
         opt3.setVisibility(View.VISIBLE);
         opt4.setVisibility(View.VISIBLE);
 
-
-
-
-        switch (currentOption.nextOptions.size()){
-            case 1:
-                opt2.setVisibility(View.INVISIBLE);
-                opt3.setVisibility(View.INVISIBLE);
-                opt4.setVisibility(View.INVISIBLE);
-
-
-                opt1.setText(currentOption.nextOptions.get(0).optionTitle);
-                break;
-            case 2:
-                opt3.setVisibility(View.INVISIBLE);
-                opt4.setVisibility(View.INVISIBLE);
-
-                opt1.setText(currentOption.nextOptions.get(0).optionTitle);
-                opt2.setText(currentOption.nextOptions.get(1).optionTitle);
-                break;
-            case 3:
-
-                opt4.setVisibility(View.INVISIBLE);
-
-                opt1.setText(currentOption.nextOptions.get(0).optionTitle);
-                opt2.setText(currentOption.nextOptions.get(1).optionTitle);
-                opt3.setText(currentOption.nextOptions.get(2).optionTitle);
-                break;
-            case 4:
-                opt1.setText(currentOption.nextOptions.get(0).optionTitle);
-                opt2.setText(currentOption.nextOptions.get(1).optionTitle);
-                opt3.setText(currentOption.nextOptions.get(2).optionTitle);
-                opt4.setText(currentOption.nextOptions.get(3).optionTitle);
-
-                break;
-            default:
-
-                opt1.setVisibility(View.INVISIBLE);
-                opt2.setVisibility(View.INVISIBLE);
-                opt3.setVisibility(View.INVISIBLE);
-                opt4.setVisibility(View.VISIBLE);
-                opt4.setText("Home");
-                opt4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity2.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-                });
-                break;
+        if (currentOption.nextOptions.size() == 0) {
+            // If there are no next options (end of story), show play again or home button
+            opt1.setVisibility(View.INVISIBLE);
+            opt2.setVisibility(View.INVISIBLE);
+            opt3.setVisibility(View.INVISIBLE);
+            opt4.setText("Play Again");
+            opt4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    resetGame(); // Reset the game
+                }
+            });
+        } else {
+            // Update the options normally
+            switch (currentOption.nextOptions.size()) {
+                case 1:
+                    opt2.setVisibility(View.INVISIBLE);
+                    opt3.setVisibility(View.INVISIBLE);
+                    opt4.setVisibility(View.INVISIBLE);
+                    opt1.setText(currentOption.nextOptions.get(0).optionTitle);
+                    break;
+                case 2:
+                    opt3.setVisibility(View.INVISIBLE);
+                    opt4.setVisibility(View.INVISIBLE);
+                    opt1.setText(currentOption.nextOptions.get(0).optionTitle);
+                    opt2.setText(currentOption.nextOptions.get(1).optionTitle);
+                    break;
+                case 3:
+                    opt4.setVisibility(View.INVISIBLE);
+                    opt1.setText(currentOption.nextOptions.get(0).optionTitle);
+                    opt2.setText(currentOption.nextOptions.get(1).optionTitle);
+                    opt3.setText(currentOption.nextOptions.get(2).optionTitle);
+                    break;
+                case 4:
+                    opt1.setText(currentOption.nextOptions.get(0).optionTitle);
+                    opt2.setText(currentOption.nextOptions.get(1).optionTitle);
+                    opt3.setText(currentOption.nextOptions.get(2).optionTitle);
+                    opt4.setText(currentOption.nextOptions.get(3).optionTitle);
+                    break;
+                default:
+                    opt1.setVisibility(View.INVISIBLE);
+                    opt2.setVisibility(View.INVISIBLE);
+                    opt3.setVisibility(View.INVISIBLE);
+                    opt4.setVisibility(View.VISIBLE);
+                    opt4.setText("Home");
+                    opt4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            resetGame(); // Go back to the main menu or reset the game
+                        }
+                    });
+                    break;
+            }
         }
-
-
     }
 
-    public void specialOptionSetup(){
-        if(currentOption.specialOptionNum == 0) return;
+    public void resetGame() {
+        StorySetup setup = new StorySetup();
+        StorySetup.startNode = new StoryOption();
+        currentOption = StorySetup.startNode;
 
-        switch (currentOption.specialOptionNum){
+        selectedCharacter = "";
+
+        tvInfo1.setText("Welcome to Kerfta");
+        tvInfo2.setText("Character Selected: " + selectedCharacter);
+        tvInfo3.setText("");
+
+        btnOpt1.setVisibility(View.VISIBLE);
+        btnOpt2.setVisibility(View.VISIBLE);
+        btnOpt3.setVisibility(View.VISIBLE);
+        btnOpt4.setVisibility(View.VISIBLE);
+
+        btnOpt1.setText("Start Your Journey");
+        btnOpt2.setText("Option 2");
+        btnOpt3.setText("Option 3");
+        btnOpt4.setText("Option 4");
+
+
+        Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+
+    public void specialOptionSetup() {
+        if (currentOption.specialOptionNum == 0) return;
+
+        switch (currentOption.specialOptionNum) {
             case 1:
                 break;
             case 2:

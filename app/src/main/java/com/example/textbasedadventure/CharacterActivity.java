@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.textbasedadventure.Classes.StoryOption;
-
 public class CharacterActivity extends AppCompatActivity {
 
     Button btnDruid, btnFighter, btnRogue, btnSorcerer, btnSelect;
@@ -30,9 +28,9 @@ public class CharacterActivity extends AppCompatActivity {
 
         btnDruid = findViewById(R.id.btnDruid);
         btnFighter = findViewById(R.id.btnFighter);
-        btnRogue = findViewById(R.id.btnRogue);
-        btnSorcerer = findViewById(R.id.btnSorcerer);
-        btnSelect = findViewById(R.id.btnSelect);
+        btnRogue = findViewById(R.id.btnOpt3);
+        btnSorcerer = findViewById(R.id.btnOpt4);
+        btnSelect = findViewById(R.id.btnOpt2);
 
         tvCharDescription = findViewById(R.id.tvCharDescription);
 

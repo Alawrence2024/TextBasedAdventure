@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:background="#020000"
-            android:fontFamily="@font/almendra_sc"
+            android:fontFamily="@font/medievalsharp"
             android:padding="10dp"
             android:text="Information on Game"
             android:textAlignment="center"

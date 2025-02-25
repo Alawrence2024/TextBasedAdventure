@@ -62,7 +62,7 @@
         app:layout_constraintGuide_begin="205dp" />
 
     <Button
-        android:id="@+id/btnRogue"
+        android:id="@+id/btnOpt3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -78,7 +78,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <Button
-        android:id="@+id/btnSorcerer"
+        android:id="@+id/btnOpt4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -94,7 +94,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
     <Button
-        android:id="@+id/btnSelect"
+        android:id="@+id/btnOpt2"
         android:layout_width="96dp"
         android:layout_height="59dp"
         android:layout_marginTop="8dp"
@@ -123,7 +123,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnRogue"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpt3"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
@@ -140,7 +140,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSorcerer"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpt4"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
@@ -149,7 +149,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="329dp"
         android:layout_height="177dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSelect"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpt2"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
