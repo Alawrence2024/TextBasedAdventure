@@ -15,9 +15,6 @@ public class StorySetup {
         startNode.optionText = "Arriving in town you see signs of a once lively sprawl, deserted market stalls like the streets, children’s toys lay discarded in the street. As you walk through the town’s modest square you feel the eyes of suspicious onlookers as daggers upon your backs. One brave soul works up the courage to confront you and your compatriots “What be your business? Be quick with it and go. This town has had too much trouble for adventurers like yourselves to attract more.";
 
 
-
-
-
         //Blacksmith tree
         StoryOption townBlacksmith = new StoryOption("We are just looking for a blacksmith", "The blacksmith lives at the edge of town. You lot will be a sight for sore eyes. Hasn’t had much business since things began");
         StoryOption townSmithTransition = new StoryOption("Continue", "You can always hear a smithy before you see it. The familiar clang of steel being molded to the will of the smith’s hammer echoes through your ears. You approach a tall figure perfecting their craft. \n\n" + "“Looking for some protection adventurer?” A bulky woman covered in many a scar inquires.");
