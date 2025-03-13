@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.textbasedadventure.Classes.StoryOption;
-
 
 public class MainActivity extends AppCompatActivity {
     Button btnStart, btnInfo;
