@@ -21,10 +21,10 @@ public class StorySetup {
         StoryOption blacksmith = new StoryOption("“Our blades are proficient, but we could all use some new armor. Ours are on their last legs”", "“Had a run in with the beast then? Tell me was it hairy or scaly, I’ve got a wager to win. Oh what am I saying you wouldn’t be alive if you’d seen it. Sorry, I can’t do much for you. A cave in at the mine of Mt. Yor’Thune has left me without workable ore.”");
         StoryOption blacksmithYorthuneTransition = new StoryOption("Go to Mt. Yor'Thune", "Mt. Yor’thune, a towering spire of earth, juts out from the worlds crust. It’s white peaks, loom over you if only to remind you that you’re place in this life is insignificant. A caved in mineshaft is framed by the base of the mountain.");
 
-        startNode.nextOptions.add(townBlacksmith);
-        startNode.nextOptions.get(0).nextOptions.add(townSmithTransition);
-        startNode.nextOptions.get(0).nextOptions.get(0).nextOptions.add(blacksmith);
-        startNode.nextOptions.get(0).nextOptions.get(0).nextOptions.get(0).nextOptions.add(blacksmithYorthuneTransition);
+        startNode.getNextOptionsOrdered().add(townBlacksmith);
+        startNode.getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(townSmithTransition);
+        startNode.getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(blacksmith);
+        startNode.getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(blacksmithYorthuneTransition);
 
         //Horses Tail inn tree
         StoryOption townInn = new StoryOption("We need a place to stay the night", "“The Horses Tail might still be open. But don’t think of staying too long, adventurers attract all sorts of mischief.”");
@@ -32,10 +32,10 @@ public class StorySetup {
         StoryOption inn = new StoryOption("We were hoping to rest here the night, but it seems rather unsafe?", "Yes, admittedly things haven’t be as peaceful as they usually are. You see people have been going missing lately. Most say something about a hairy monster that lives in the nearby forest and comes at dusk. Though I’m not sure anyone has lived to properly see the creature. But I assure you this humble inn of ours is the safest place to be tonight.");
         StoryOption innStay = new StoryOption("Stay the night","While you are fast asleep the beast stealthy climbs into your rooms window and carries you off never to be seen again.");
 
-        startNode.nextOptions.add(townInn);
-        startNode.nextOptions.get(1).nextOptions.add(townInnTransition);
-        startNode.nextOptions.get(1).nextOptions.get(0).nextOptions.add(inn);
-        startNode.nextOptions.get(1).nextOptions.get(0).nextOptions.get(0).nextOptions.add(innStay);
+        startNode.getNextOptionsOrdered().add(townInn);
+        startNode.getNextOptionsOrdered().get(1).getNextOptionsOrdered().add(townInnTransition);
+        startNode.getNextOptionsOrdered().get(1).getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(inn);
+        startNode.getNextOptionsOrdered().get(1).getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(innStay);
 
         //General Store tree
         StoryOption townGeneralStore = new StoryOption("We are looking for supplies", "“General store still has some supplies, I think. Best hurry before their bought up”");
@@ -43,10 +43,10 @@ public class StorySetup {
         StoryOption generalStore = new StoryOption("“We were in the market for some trail rations, though it looks you couldn’t find even a mere crumb here. Where have all your wares gone?”", "“I have to admit, it’s true. Haven’t been able to get the supply wagons through. They’re too scared the creature that stalks the Hills of Gelyle will snatch their horses right from under them. Truly it’s not that far, once you past the forest you could make your way through the hills and get supplies in the town next over.”");
         StoryOption storeForestTransition = new StoryOption("Head to the forest", "The Gelyian Woods sits in the center of the county, providing travelers with plentiful shade and refuge from the rain. As you approach you see several fallen trees and deep scratch marks on their bark. One particularly large tree lay in your path. ");
 
-        startNode.nextOptions.add(townGeneralStore);
-        startNode.nextOptions.get(2).nextOptions.add(townStoreTransition);
-        startNode.nextOptions.get(2).nextOptions.get(0).nextOptions.add(generalStore);
-        startNode.nextOptions.get(2).nextOptions.get(0).nextOptions.get(0).nextOptions.add(storeForestTransition);
+        startNode.getNextOptionsOrdered().add(townGeneralStore);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().add(townStoreTransition);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(generalStore);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(storeForestTransition);
 
 
 
@@ -56,8 +56,8 @@ public class StorySetup {
         StoryOption fightOption = new StoryOption("Fight the Beast", "You choose to fight the beast head-on with the weapon and supplies you've gathered.");
         StoryOption retreatOption = new StoryOption("Retreat", "You choose to retreat and leave the town, leaving the beast to terrorize Kerfta.");
 
-        finalBattleNode.nextOptions.add(fightOption);
-        finalBattleNode.nextOptions.add(retreatOption);
+        finalBattleNode.getNextOptionsOrdered().add(fightOption);
+        finalBattleNode.getNextOptionsOrdered().add(retreatOption);
     }
 
     // A method to add class-specific options to avoid repeating code
@@ -89,37 +89,37 @@ public class StorySetup {
 
         // Blacksmith Options for Druid
         StoryOption blacksmithInteraction = new StoryOption("Speak with the Blacksmith", "The Blacksmith seems busy but notices your druidic attire and asks if you can assist with repairing his enchanted tools.");
-        startNode.nextOptions.get(1).nextOptions.add(blacksmithInteraction);
+        startNode.getNextOptionsOrdered().get(1).getNextOptionsOrdered().add(blacksmithInteraction);
 
         // Duke's Castle Options for Druid
         StoryOption dukeIntro = new StoryOption("Speak with the Duke", "The Duke recognizes you as a druid and offers his help, suggesting that the beast might be connected to dark magic in the forest.");
-        startNode.nextOptions.get(2).nextOptions.add(dukeIntro);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().add(dukeIntro);
         StoryOption leaveDuke = new StoryOption("Leave", "The Duke was concerned by you leaving suddenly");
-        startNode.nextOptions.get(2).nextOptions.add(leaveDuke);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().add(leaveDuke);
         StoryOption test = new StoryOption("test", "test");
-        startNode.nextOptions.get(2).nextOptions.add(test);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().add(test);
         StoryOption test2 = new StoryOption("test2", "test2");
-        startNode.nextOptions.get(2).nextOptions.get(2).nextOptions.add(test2);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().get(2).getNextOptionsOrdered().add(test2);
         StoryOption test2alt = new StoryOption("test2alt", "test2alt");
-        startNode.nextOptions.get(2).nextOptions.get(2).nextOptions.add(test2alt);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().get(2).getNextOptionsOrdered().add(test2alt);
     }
 
     // Fighter-specific options
     private void addFighterOptions() {
         StoryOption townInfoOptionFighter = new StoryOption("Ask about the beast", "You ask the townsfolk about the beast's whereabouts, offering your services to protect them.");
         StoryOption townInfoQuest = new StoryOption("Ask about quests", "The townsfolk mention a quest to eliminate the beast, but they need a skilled warrior like you.");
-        startNode.nextOptions.get(0).nextOptions.add(townInfoOptionFighter);
-        startNode.nextOptions.get(0).nextOptions.add(townInfoQuest);
+        startNode.getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(townInfoOptionFighter);
+        startNode.getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(townInfoQuest);
 
         // Blacksmith Options for Fighter
         StoryOption blacksmithInteractionFighter = new StoryOption("Speak with the Blacksmith", "The Blacksmith gives you a discount on gear after hearing you're a fighter, preparing you for battle.");
-        startNode.nextOptions.get(1).nextOptions.add(blacksmithInteractionFighter);
+        startNode.getNextOptionsOrdered().get(1).getNextOptionsOrdered().add(blacksmithInteractionFighter);
 
         // Duke's Castle Options for Fighter
         StoryOption dukeIntroFighter = new StoryOption("Speak with the Duke", "The Duke sees the fighter's armor and trusts you as a soldier, offering you a weapon to fight the beast.");
-        startNode.nextOptions.get(2).nextOptions.add(dukeIntroFighter);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().add(dukeIntroFighter);
         StoryOption leaveDuke = new StoryOption("Leave", "The Duke was concerned by you leaving suddenly");
-        startNode.nextOptions.get(2).nextOptions.add(leaveDuke);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().add(leaveDuke);
     }
 
     // Rogue-specific options
@@ -132,30 +132,30 @@ public class StorySetup {
         StoryOption dukeEpilogue = new StoryOption("Save the Dukes Daughter","You turn from the beast and make your way over to the Dukes daughter, using your thieves tools you unlock her manacles and she falls to the floor. Thank you, my father was cursed by an old hag whom he denied a night of feast. His affliction was his own doing, he assuredly was a man deserving of his fate. As she raises to her feet she makes her way upstairs to pick up where her father left off. The town is safe for now....");
 
         // Duke's Castle Options for Rogue
-        startNode.nextOptions.add(townInfoOptionRogue);
-        startNode.nextOptions.get(3).nextOptions.add(townCastleTransition);
-        startNode.nextOptions.get(3).nextOptions.get(0).nextOptions.add(wineDine);
-        startNode.nextOptions.get(3).nextOptions.get(0).nextOptions.get(0).nextOptions.add(exploreTheGrounds);
-        startNode.nextOptions.get(3).nextOptions.get(0).nextOptions.get(0).nextOptions.get(0).nextOptions.add(fightDuke);
-        startNode.nextOptions.get(3).nextOptions.get(0).nextOptions.get(0).nextOptions.get(0).nextOptions.get(0).nextOptions.add(dukeEpilogue);
+        startNode.getNextOptionsOrdered().add(townInfoOptionRogue);
+        startNode.getNextOptionsOrdered().get(3).getNextOptionsOrdered().add(townCastleTransition);
+        startNode.getNextOptionsOrdered().get(3).getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(wineDine);
+        startNode.getNextOptionsOrdered().get(3).getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(exploreTheGrounds);
+        startNode.getNextOptionsOrdered().get(3).getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(fightDuke);
+        startNode.getNextOptionsOrdered().get(3).getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(dukeEpilogue);
     }
 
     // Sorcerer-specific options
     private void addSorcererOptions() {
         StoryOption townInfoOptionSorcerer = new StoryOption("Ask about the magical disturbances", "You ask the townsfolk if there have been any magical disturbances connected to the beast.");
         StoryOption townInfoArcane = new StoryOption("Ask about arcane magic", "The locals mention strange arcane symbols near the beast’s lair. Perhaps magic is the key to defeating it.");
-        startNode.nextOptions.get(0).nextOptions.add(townInfoOptionSorcerer);
-        startNode.nextOptions.get(0).nextOptions.add(townInfoArcane);
+        startNode.getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(townInfoOptionSorcerer);
+        startNode.getNextOptionsOrdered().get(0).getNextOptionsOrdered().add(townInfoArcane);
 
         // Blacksmith Options for Sorcerer
         StoryOption blacksmithInteractionSorcerer = new StoryOption("Speak with the Blacksmith", "The Blacksmith shows you an enchanted amulet, believing that your sorcerous powers might help unlock its true potential.");
-        startNode.nextOptions.get(1).nextOptions.add(blacksmithInteractionSorcerer);
+        startNode.getNextOptionsOrdered().get(1).getNextOptionsOrdered().add(blacksmithInteractionSorcerer);
 
         // Duke's Castle Options for Sorcerer
         StoryOption dukeIntroSorcerer = new StoryOption("Speak with the Duke", "The Duke is intrigued by your magical abilities and suggests that magic could be the only way to defeat the beast.");
-        startNode.nextOptions.get(2).nextOptions.add(dukeIntroSorcerer);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().add(dukeIntroSorcerer);
         StoryOption leaveDuke = new StoryOption("Leave", "The Duke was concerned by you leaving suddenly");
-        startNode.nextOptions.get(2).nextOptions.add(leaveDuke);
+        startNode.getNextOptionsOrdered().get(2).getNextOptionsOrdered().add(leaveDuke);
     }
 
     public void adjustStoryBasedOnCharacter(String character) {

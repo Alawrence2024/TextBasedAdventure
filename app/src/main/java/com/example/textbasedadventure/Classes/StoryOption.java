@@ -3,19 +3,43 @@ package com.example.textbasedadventure.Classes;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Collections;
 
 public class StoryOption {
 
     public String optionTitle;
     public String optionText;
-    public List<StoryOption> nextOptions;
+    private List<StoryOption> nextOptions;
 
     public int healthDrain;
+
+    public int reputationChange;
     public int requiredHp;
     public String requiredClass;
     public int requiredReputation;
 
     public int specialOptionNum;
+
+
+
+    public List<StoryOption> GetNextOptions() {
+        List<StoryOption> validOptions = new ArrayList<>();
+        for (StoryOption option : nextOptions) {
+            if (option.optionIsValid()) {
+                validOptions.add(option);
+            }
+        }
+
+        if (validOptions.size() > 4){
+            Collections.shuffle(validOptions);
+        }
+        return validOptions;
+    }
+
+    public List<StoryOption> getNextOptionsOrdered() {
+        return nextOptions;
+    }
+
 
     public StoryOption(String optionTitle, String optionText) {
         this.optionTitle = optionTitle;
@@ -26,6 +50,16 @@ public class StoryOption {
         this.requiredHp = 0;
         this.requiredClass = "";
         this.requiredReputation = 0;
+    }
+
+    public StoryOption(String optionTitle, String optionText, int healthDrain, int reputationChange, String requiredClass, int requiredHp, int requiredReputation) {
+        this.optionTitle = optionTitle;
+        this.optionText = optionText;
+        this.healthDrain = healthDrain;
+        this.reputationChange = reputationChange;
+        this.requiredClass = requiredClass;
+        this.requiredHp = requiredHp;
+        this.requiredReputation = requiredReputation;
     }
 
     public StoryOption() {
@@ -56,10 +90,17 @@ public class StoryOption {
         return true;
     }
 
-    public void applyHealthDrain() {
-        if (healthDrain > 0) {
+    private void applyHealthDrain() {
             PlayerStats.updateHealth(-healthDrain);
-        }
+    }
+
+    private void applyReputationChange() {
+        PlayerStats.updateReputation(reputationChange);
+    }
+
+    public void applyStatChanges(){
+        applyHealthDrain();
+        applyReputationChange();
     }
 
     public static List<StoryOption> getNextOptions(List<StoryOption> options) {

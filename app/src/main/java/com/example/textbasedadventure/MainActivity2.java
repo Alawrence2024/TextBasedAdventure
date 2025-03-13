@@ -76,19 +76,19 @@ public class MainActivity2 extends AppCompatActivity {
                 playerStats = new PlayerStats(100, Druid, 0);
                 break;
             case "Fighter":
-                ClassBase Fighter = new Fighter(1, 2,
+                ClassBase Fighter = new Fighter(4, 4,
                         3, 4, 5,
                         6, 7, 8);
                 playerStats = new PlayerStats(80, Fighter, 0);
                 break;
             case "Rogue":
-                ClassBase Rogue = new Rogue(1, 2,
+                ClassBase Rogue = new Rogue(4, 4,
                         3, 4, 5,
                         6, 7, 8);
                 playerStats = new PlayerStats(90, Rogue, 0);
                 break;
             default:
-                ClassBase Sorcerer = new Sorcerer(1, 2,
+                ClassBase Sorcerer = new Sorcerer(4, 4,
                         3, 4, 5,
                         6, 7, 8);
                 playerStats = new PlayerStats(100, Sorcerer, 0);
@@ -98,26 +98,34 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void option1(View view) {
-        currentOption = currentOption.nextOptions.get(0);
+        currentOption = currentOption.GetNextOptions().get(0);
         updateView();
     }
 
     public void option2(View view) {
-        currentOption = currentOption.nextOptions.get(1);
+        currentOption = currentOption.GetNextOptions().get(1);
         updateView();
     }
 
     public void option3(View view) {
-        currentOption = currentOption.nextOptions.get(2);
+        currentOption = currentOption.GetNextOptions().get(2);
         updateView();
     }
 
     public void option4(View view) {
-        currentOption = currentOption.nextOptions.get(3);
+        currentOption = currentOption.GetNextOptions().get(3);
         updateView();
     }
 
     public void updateView() {
+
+
+
+
+        //applies reputation and health changes both positve and negative
+        currentOption.applyStatChanges();
+
+
         maintext = findViewById(R.id.tvInfo3);
         info = findViewById(R.id.tvInfo2);
         maintext.setText("\n" + currentOption.optionText);
@@ -133,7 +141,7 @@ public class MainActivity2 extends AppCompatActivity {
         opt3.setVisibility(View.VISIBLE);
         opt4.setVisibility(View.VISIBLE);
 
-        if (currentOption.nextOptions.size() == 0) {
+        if (currentOption.GetNextOptions().size() == 0) {
             // If there are no next options (end of story), show play again or home button
             opt1.setVisibility(View.INVISIBLE);
             opt2.setVisibility(View.INVISIBLE);
@@ -147,30 +155,30 @@ public class MainActivity2 extends AppCompatActivity {
             });
         } else {
             // Update the options normally
-            switch (currentOption.nextOptions.size()) {
+            switch (currentOption.GetNextOptions().size()) {
                 case 1:
                     opt2.setVisibility(View.INVISIBLE);
                     opt3.setVisibility(View.INVISIBLE);
                     opt4.setVisibility(View.INVISIBLE);
-                    opt1.setText(currentOption.nextOptions.get(0).optionTitle);
+                    opt1.setText(currentOption.GetNextOptions().get(0).optionTitle);
                     break;
                 case 2:
                     opt3.setVisibility(View.INVISIBLE);
                     opt4.setVisibility(View.INVISIBLE);
-                    opt1.setText(currentOption.nextOptions.get(0).optionTitle);
-                    opt2.setText(currentOption.nextOptions.get(1).optionTitle);
+                    opt1.setText(currentOption.GetNextOptions().get(0).optionTitle);
+                    opt2.setText(currentOption.GetNextOptions().get(1).optionTitle);
                     break;
                 case 3:
                     opt4.setVisibility(View.INVISIBLE);
-                    opt1.setText(currentOption.nextOptions.get(0).optionTitle);
-                    opt2.setText(currentOption.nextOptions.get(1).optionTitle);
-                    opt3.setText(currentOption.nextOptions.get(2).optionTitle);
+                    opt1.setText(currentOption.GetNextOptions().get(0).optionTitle);
+                    opt2.setText(currentOption.GetNextOptions().get(1).optionTitle);
+                    opt3.setText(currentOption.GetNextOptions().get(2).optionTitle);
                     break;
                 case 4:
-                    opt1.setText(currentOption.nextOptions.get(0).optionTitle);
-                    opt2.setText(currentOption.nextOptions.get(1).optionTitle);
-                    opt3.setText(currentOption.nextOptions.get(2).optionTitle);
-                    opt4.setText(currentOption.nextOptions.get(3).optionTitle);
+                    opt1.setText(currentOption.GetNextOptions().get(0).optionTitle);
+                    opt2.setText(currentOption.GetNextOptions().get(1).optionTitle);
+                    opt3.setText(currentOption.GetNextOptions().get(2).optionTitle);
+                    opt4.setText(currentOption.GetNextOptions().get(3).optionTitle);
                     break;
                 default:
                     opt1.setVisibility(View.INVISIBLE);

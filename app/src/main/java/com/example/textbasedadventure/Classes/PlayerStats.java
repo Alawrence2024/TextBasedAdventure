@@ -21,6 +21,7 @@ public class PlayerStats {
     public static void updateHealth(int healthChange) {
         hp += healthChange;
     }
+    public static void updateReputation(int reputationChange) {reputation += reputationChange;}
 
     public static String getStats() {
         return "HP: " + hp + ", Class: " + playerClass + ", Reputation: " + reputation;
