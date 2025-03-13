@@ -69,16 +69,17 @@ public class MainActivity2 extends AppCompatActivity {
     private void initializePlayerStats(String characterClass) throws Exception {
         switch (characterClass) {
             case "Druid":
-                ClassBase Druid = new Druid(1, 2,
-                        3, 4, 5,
+                ClassBase Druid = new Druid(skillChecks.StrengthCheck(1),
+                        skillChecks.DexterityCheck(2),
+                        3, 5, 5,
                         6, 7, 8);
-                playerStats = new PlayerStats(100, Druid,0 );
+                playerStats = new PlayerStats(100, Druid, 0);
                 break;
             case "Fighter":
                 ClassBase Fighter = new Fighter(1, 2,
                         3, 4, 5,
                         6, 7, 8);
-                playerStats = new PlayerStats(80, Fighter,  0);
+                playerStats = new PlayerStats(80, Fighter, 0);
                 break;
             case "Rogue":
                 ClassBase Rogue = new Rogue(1, 2,
@@ -87,10 +88,10 @@ public class MainActivity2 extends AppCompatActivity {
                 playerStats = new PlayerStats(90, Rogue, 0);
                 break;
             default:
-                ClassBase Sorcereer = new Sorcerer(1, 2,
+                ClassBase Sorcerer = new Sorcerer(1, 2,
                         3, 4, 5,
                         6, 7, 8);
-                playerStats = new PlayerStats(100, Sorcereer, 0);
+                playerStats = new PlayerStats(100, Sorcerer, 0);
                 break;
         }
 
