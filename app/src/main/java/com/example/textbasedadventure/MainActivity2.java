@@ -8,6 +8,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.textbasedadventure.Classes.DndClasses.ClassBase;
+import com.example.textbasedadventure.Classes.DndClasses.Druid;
+import com.example.textbasedadventure.Classes.DndClasses.Fighter;
+import com.example.textbasedadventure.Classes.DndClasses.Rogue;
+import com.example.textbasedadventure.Classes.DndClasses.Sorcerer;
 import com.example.textbasedadventure.Classes.PlayerStats;
 import com.example.textbasedadventure.Classes.SkillChecks;
 import com.example.textbasedadventure.Classes.StoryOption;
@@ -21,7 +26,7 @@ public class MainActivity2 extends AppCompatActivity {
     public Button opt1, opt2, opt3, opt4;
     StorySetup setup = new StorySetup();
     public StoryOption currentOption;
-    PlayerStats player = new PlayerStats();
+    PlayerStats playerStats = new PlayerStats();
     SkillChecks skillChecks = new SkillChecks();
 
 
@@ -35,6 +40,11 @@ public class MainActivity2 extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         selectedCharacter = bundle.getString("selectedCharacter");
 
+        try {
+            initializePlayerStats(selectedCharacter);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         btnOpt1 = findViewById(R.id.btnOpt1);
         btnOpt2 = findViewById(R.id.btnOpt2);
@@ -54,6 +64,36 @@ public class MainActivity2 extends AppCompatActivity {
         currentOption = StorySetup.startNode;
 
         updateView();
+    }
+
+    private void initializePlayerStats(String characterClass) throws Exception {
+        switch (characterClass) {
+            case "Druid":
+                ClassBase Druid = new Druid(1, 2,
+                        3, 4, 5,
+                        6, 7, 8);
+                playerStats = new PlayerStats(100, Druid,0 );
+                break;
+            case "Fighter":
+                ClassBase Fighter = new Fighter(1, 2,
+                        3, 4, 5,
+                        6, 7, 8);
+                playerStats = new PlayerStats(80, Fighter,  0);
+                break;
+            case "Rogue":
+                ClassBase Rogue = new Rogue(1, 2,
+                        3, 4, 5,
+                        6, 7, 8);
+                playerStats = new PlayerStats(90, Rogue, 0);
+                break;
+            default:
+                ClassBase Sorcereer = new Sorcerer(1, 2,
+                        3, 4, 5,
+                        6, 7, 8);
+                playerStats = new PlayerStats(100, Sorcereer, 0);
+                break;
+        }
+
     }
 
     public void option1(View view) {

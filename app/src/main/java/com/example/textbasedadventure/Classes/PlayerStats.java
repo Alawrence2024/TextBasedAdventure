@@ -7,6 +7,17 @@ public class PlayerStats {
     public static ClassBase playerClass;
     public static int reputation = 50;
 
+    public PlayerStats(int hp, ClassBase playerClass, int reputation)
+    {
+        this.hp = hp;
+        this.playerClass = playerClass;
+        this.reputation = reputation;
+
+    }
+
+    public PlayerStats(){
+
+    }
     public static void updateHealth(int healthChange) {
         hp += healthChange;
     }
