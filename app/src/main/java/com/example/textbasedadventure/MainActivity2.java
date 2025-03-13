@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.textbasedadventure.Classes.PlayerStats;
+import com.example.textbasedadventure.Classes.SkillChecks;
 import com.example.textbasedadventure.Classes.StoryOption;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -19,6 +21,9 @@ public class MainActivity2 extends AppCompatActivity {
     public Button opt1, opt2, opt3, opt4;
     StorySetup setup = new StorySetup();
     public StoryOption currentOption;
+    PlayerStats player = new PlayerStats();
+    SkillChecks skillChecks = new SkillChecks();
+
 
     String selectedCharacter;
 
@@ -29,6 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         selectedCharacter = bundle.getString("selectedCharacter");
+
 
         btnOpt1 = findViewById(R.id.btnOpt1);
         btnOpt2 = findViewById(R.id.btnOpt2);
